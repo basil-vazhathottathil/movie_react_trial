@@ -1,3 +1,5 @@
+import '../css/Favorites.css';
+
 function Favorites(){
 
     return (
@@ -8,4 +10,4 @@ function Favorites(){
     )
 }
 
-export default Favorites;  
+export default Favorites;

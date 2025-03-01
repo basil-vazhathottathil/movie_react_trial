@@ -1,9 +1,10 @@
-import MovieCard from './components/MovieCard'
+import MovieCard from './components/MovieCard';
 import Home from './pages/Home';
-import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import './css/App.css';
+import { Routes, Route } from 'react-router-dom';
 import Favorites from './pages/Favorites';
 import NavBar from './components/NavBar';
+import './css/App.css'; // Add this line
 
 function App() {
   const movieno=1;

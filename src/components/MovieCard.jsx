@@ -1,3 +1,5 @@
+import '../css/MovieCard.css';
+
 function MovieCard({movie}){//the movie is a object?
     
     function onFavClick(){

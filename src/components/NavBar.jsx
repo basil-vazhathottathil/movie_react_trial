@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import '../css/NavBar.css'
 
 
 function NavBar(){
@@ -16,4 +17,4 @@ function NavBar(){
     )
 }
 
-export default NavBar; 
+export default NavBar;
