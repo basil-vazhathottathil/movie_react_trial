@@ -26,14 +26,19 @@ function Home() {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        try {
-            setLoading(true);
+        if (!search.trim() || loading) {
+            return;
+        }
+
+        setLoading(true);
+        try{
             const searchResults = await searchMovies(search);
             setMovies(searchResults);
-        } catch (err) {
+            setError(null);
+        }catch{
             console.log(err);
-            setError('Failed to search movies.');
-        } finally {
+            setError('Failed to search movies...');
+        }finally{
             setLoading(false);
         }
     };
