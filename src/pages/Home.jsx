@@ -26,19 +26,14 @@ function Home() {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-        if (!search.trim() || loading) {
-            return;
-        }
-
-        setLoading(true);
-        try{
+        try {
+            setLoading(true);
             const searchResults = await searchMovies(search);
             setMovies(searchResults);
-            setError(null);
-        }catch{
+        } catch (err) {
             console.log(err);
-            setError('Failed to search movies...');
-        }finally{
+            setError('Failed to search movies.');
+        } finally {
             setLoading(false);
         }
     };
@@ -56,15 +51,14 @@ function Home() {
                 <button className="search-button">Search</button>
             </form>
 
-            {error && <div className="error-message">{error}</div>}
+            {loading && <p>Loading...</p>}
+            {error && <p>{error}</p>}
 
-            {loading ? <div className="loading">Loading...</div> : 
             <div className="movies-grid">
                 {movies.map((movie) => (
                     <MovieCard movie={movie} key={movie.id} />
                 ))}
             </div>
-            }
         </div>
     );
 }
